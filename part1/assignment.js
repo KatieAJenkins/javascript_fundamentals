@@ -1,10 +1,12 @@
+"use strict";
+
 // Define a function named sum that takes two arguments
 //    a (number)
 //    b (number)
 //
 // Return the sum of these two arguments
-function sum(a, b) {
-  // return a + b;
+function sum (a , b) {
+  return a + b;
 }
 
 // Define a function named product that takes two arguments
@@ -13,7 +15,7 @@ function sum(a, b) {
 //
 // Return the product of these two arguments
 function product(a, b) {
-  // YOUR CODE HERE
+  return a * b;
 }
 
 // Define a function named sumAndProduct that takes three arguments
@@ -26,7 +28,7 @@ function product(a, b) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
 function sumAndProduct(x, y, z) {
-
+  return (x + y)*z;
 }
 
 // Define a function named roundUp that takes one argument
@@ -35,16 +37,22 @@ function sumAndProduct(x, y, z) {
 // Return the argument rounded up to the nearest integer
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
-function roundUp(decimal) {
 
+function roundUp (decimal) {
+  return Math.ceil(decimal);
 }
+
 
 // Define a function named toFahrenheit that takes one argument
 //    celsius (number)
 //
 // Return the argument converted to Fahrenheit rounded to the nearest integer.
 // Use Google to find the formula.
+function toFahrenheit (celsius) {
+  return Math.round((celsius * 1.8) + 32);
+}
 
+//
 
 
 // Define a function named areaOfCircle that takes one argument
@@ -55,7 +63,10 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI
 
-
+//return(Math.PI * Match.pow(radius, 2))//another way to solve below.
+function areaOfCircle (radius) {
+  return (Math.PI * radius * radius);
+}
 
 // Define a function named areaOfRing that takes two arguments
 //    outerRadius (number)
@@ -64,6 +75,9 @@ function roundUp(decimal) {
 // Return the area of a circular ring using these arguments. Use Google to find
 // the formula.
 
+function areaOfRing (outerRadius, innerRadius){
+  return (Math.PI * ((Math.pow(outerRadius, 2)) - (Math.pow(innerRadius, 2))));
+}
 
 
 // Define a function named greet that takes 2 arguments
@@ -73,6 +87,12 @@ function roundUp(decimal) {
 // Return a string in the format 'Hello, Kelly Rippa!' using these arguments
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Template_strings
+
+//can use back ticks `` to return `Hello, ${firstName} ${lastName}!`;
+
+function greet (firstName, lastName) {
+  return ('Hello, ' + firstName + ' ' + lastName + '!');
+}
 
 
 
@@ -91,6 +111,13 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
 
+function toSentence (word1, word2, word3, oxfordComma) {
+if (oxfordComma === true) {
+  return (word1 + ', ' + word2 + ', and ' + word3 +  '.');
+} else {
+  return (word1 + ', ' + word2 + ' and ' + word3 +  '.');
+  }
+}
 
 
 // Define a function named toRoman that takes one argument
@@ -105,6 +132,47 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
 
+//if(arabic <1 || arabic > 10) return null;
+
+function toRoman (arabic) {
+  switch (arabic) {
+        case 1:
+          return 'I';
+          break;
+        case 2:
+          return 'II';
+          break;
+        case 3:
+          return 'III';
+          break;
+        case 4:
+          return 'IV';
+          break;
+        case 5:
+          return 'V';
+          break;
+        case 6:
+          return 'VI';
+          break;
+        case 7:
+          return 'VII';
+          break;
+        case 8:
+          return 'VIII';
+          break;
+        case 9:
+          return 'IX';
+          break;
+        case 10:
+          return 'X';
+          break;
+        default:
+          return null;
+          break;
+      }
+    }
+
+
 
 
 // Define a function toDolla that takes one argument
@@ -115,6 +183,9 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 
+function toDolla (amount) {
+  return "$" + (amount.toFixed(2));
+}
 
 
 // Define a function named percentage that takes two arguments
@@ -124,7 +195,9 @@ function roundUp(decimal) {
 // Return the percentage of the first argument divided by the second. For
 // example, given 1 and 4, then return '25.0%'.
 
-
+function percentage (numerator, denominator) {
+    return ((numerator / denominator) * 100).toFixed(1) + "%";
+}
 
 // Define a function named isStrictlyEqual that takes two arguments
 //    value1 (anything)
@@ -139,6 +212,14 @@ function roundUp(decimal) {
 //
 // See https://dorey.github.io/JavaScript-Equality-Table/
 
+function isStrictlyEqual (value1 , value2) {
+    if (value1 === value2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 
 
 // Define a function named isLooselyEqual that takes two arguments
@@ -152,6 +233,13 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using
 
+function isLooselyEqual (value1 , value2) {
+  if (value1 == value2) {
+    return true;
+  } else {
+    return false;
+}
+}
 
 
 // Define a function named remainder that takes two arguments
@@ -163,7 +251,9 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
 
-
+function remainder ( numerator , denominator) {
+  return numerator % denominator;
+}
 
 // Define a function named isEven that takes one argument
 //    integer (number)
@@ -175,7 +265,13 @@ function roundUp(decimal) {
 //
 // Hint: What number will give you a remainder of 0 if the argument is even?
 
-
+function isEven (integer) {
+  if (integer % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // Define a function named isOdd that takes one argument
 //    integer (number)
@@ -185,6 +281,14 @@ function roundUp(decimal) {
 // Otherwise
 //    Return false
 
+//do not need if and else statements.
+function isOdd ( integer ) {
+  if (integer % 2 !== 0 ) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 
 // Define a function named isVowel that takes one argument
@@ -197,7 +301,14 @@ function roundUp(decimal) {
 //
 // Treat 'y' as a consonant.
 
-
+function isVowel (letter) {
+  if ( letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
+    return true;
+  } else {
+    return false;
+    }
+  }
+//return ['a', 'e'].indexOf(letter) !== -1;
 
 // Define a function named largestOfThree which takes three arguments
 //    value1 (number)
@@ -207,6 +318,11 @@ function roundUp(decimal) {
 // Return the largest argument by value
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+
+function largestOfThree (value1 , value2, value3) {
+  return Math.max(value1 , value2 , value3);
+}
+
 
 
 
@@ -220,8 +336,31 @@ function roundUp(decimal) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+//
+function longestOfThree (value1 , value2 , value3) {
 
+ var longest = [value1, value2, value3];
+ var max = 0;
+ var word = "";
+  for (var i = 0; i < longest.length; i++) {
+    if(longest[i].length > max) {
+    max = longest[i].length;
+    word = longest[i];
+    }
+  }
+  return word;
+}
 
+//function longestOfThree(value1, value2, value3) {
+// var returnVal = value1;
+//
+// if (returnVal.length < value2.length) {
+//   returnVal = value2;
+// }
+// if (returnVal.length < value3.length){
+//
+// }
+// }
 
 // Define a function named iceCreamPosition that takes two arguments
 //    pieTemperature (string)
@@ -237,6 +376,17 @@ function roundUp(decimal) {
 // Otherwise
 //    Return 'up to you'
 
+function iceCreamPosition ( pieTemperature , iceCreamFlavor) {
+  if ( iceCreamFlavor === "cardamom") {
+    return 'not at all';
+  } if (pieTemperature === "cold") {
+    return 'on top';
+  } if ( pieTemperature === "warm") {
+    return 'on the side';
+  } else {
+    return 'up to you';
+  }
+}
 
 
 // Define a function named isLeapYear that takes one argument
@@ -249,7 +399,16 @@ function roundUp(decimal) {
 //
 // See: https://en.wikipedia.org/wiki/Leap_year#Algorithm
 
+function isLeapYear ( year ) {
+  if ((year % 4 === 0 && year % 100 !== 0  || year % 400 === 0 )) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+//if ((number % 100 ===0 && number % 400 !==0) return false;
+// return number %4 === 0;
 
 // Define a function named shout that takes one argument
 //    message (string)
@@ -259,7 +418,12 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
+function shout (message) {
+  return message.toUpperCase();
+}
 
+//var shout = message => message.toUpperCase();
+//if one argument, can omit () and return. Otherwise needs return.
 
 // Define a function named whisper that takes one argument
 //    message (string)
@@ -269,6 +433,12 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
+function whisper (message) {
+  return ('shhh... ' + message.toLowerCase());
+}
+
+//var whisper = message => message.toLowerCase();
+//if one argument, can omit () and return. Otherwise needs return.
 
 
 // Define a function named stopAt that takes two arguments
@@ -280,13 +450,15 @@ function roundUp(decimal) {
 //
 // Hint: This will require a combination of 3 different steps
 //
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+  // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
 
-
+function stopAt(source, stop ) {
+	return source.substring(source.indexOf(stop), 0).trim(); //0 is index to start at
+}
 
 // Define a function named capitalize that takes one argument
 //    message (string)
@@ -296,7 +468,9 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 
-
+function capitalize ( message ) {
+  return message[0].toUpperCase() + message.substring(1);
+}
 
 // Define a function named leftPad5 that takes one argument
 //    word (string)
@@ -306,6 +480,15 @@ function roundUp(decimal) {
 // If the argument's length is 5 or more characters
 //    Return the argument
 
+function leftPad5 ( word ) {
+  if (word.length <= 5){
+    while (word.length < 5) {
+       word = " " + word;
+    }
+    return word;
+  }
+  return word;
+}
 
 
 // Define a function named superPicky that takes one argument
@@ -318,8 +501,15 @@ function roundUp(decimal) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
 
+function superPicky (value ) {
+  if ( typeof(value) === 'string') {
+    return 'Thanks! Got it.';
+  } else {
+    return 'I wanted a string, but all I got was a stinking ' + (typeof(value));
+  }
+}
 
-
+//
 // Define a function named calculateTaxRate that takes two arguments
 //    salary (number from 1 to 74,900)
 //    status (string that's either 'single' or 'joint')
@@ -330,3 +520,26 @@ function roundUp(decimal) {
 //    Return a string that says 'Better call an accountant'
 // Otherwise
 //    Return the correct tax rate as a string using the table from http://www.efile.com/tax-service/tax-calculator/tax-brackets/
+
+function calculateTaxRate (salary, status) {
+  if ( status !== 'single' && status !== 'joint' || salary > 74900 ) {
+    return 'Better call an accountant';
+  } else {
+    if ( status === 'single' ) {
+      if ( salary <= 9225 ) {
+        return "10%";
+      } if ( salary >= 9226 && salary <= 37450) {
+        return "15%";
+      } else { ( salary >= 37451 && salary <= 74901);
+        return "25%";
+      }
+    }
+  }
+    if ( status === 'joint' ) {
+      if ( salary <= 18450) {
+        return "10%";
+      } else { ( salary >= 18451 && salary <= 74900);
+        return "15%";
+      }
+    }
+  }
