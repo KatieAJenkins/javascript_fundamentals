@@ -272,11 +272,14 @@ combine(object1 , object2);
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 
-function invert (obj) {
-  return {};
-}
+var myObj = { a: 1, b: 2 };
 
-invert();
+function invert (obj) {
+  console.log(myObj.reverse());
+  }
+
+
+invert(myObj);
 
 // Define a function named values that takes in one argument.
 //    obj (object)
@@ -299,9 +302,13 @@ values(object);
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 
+var obj = { a: 1, b: 2 };
+
 function toPairs (obj){
-  return [];
+  console.log(Object.entries(obj));
 }
+
+toPairs(obj);
 
 
 // Define a function called fromPairs that takes in one argument.
@@ -311,6 +318,10 @@ function toPairs (obj){
 // argument. For example, given [['a', 1], ['b', 2]], then return
 // { a: 1, b: 2 }.
 
-function fromPairs (arr) {
-  return [];
+var myArray = [['a', 1], ['b', 2]];
+
+function fromPairs (array) {
+  console.log(Object.assign({}, obj));
 }
+
+fromPairs(myArray);
