@@ -241,9 +241,21 @@ function contains ( arr , str) {
 //
 // Tip: Use Google to learn more about calculating the distance.
 
-function distance (point1 , point2) {
-  return number;
+//AB = square root b-a x coordinate squared plus b-a y coordinate squared
+var point1 = {x: 3, y: 2};
+var point2 = {x: 9, y: 7};
+
+function distance (object1 , object2) {
+  var xdistance = point1.x - point2.x;
+  var ydistance = point1.y - point2.y;
+  var xDistSquared = Math.pow(xdistance, 2);
+  var yDistSquared = Math.pow(ydistance, 2);
+  var totalDistance = Math.sqrt(xDistSquared + yDistSquared);
+  console.log(totalDistance);
+  // return totalDistance;
 }
+
+distance(point1, point2);
 
 
 // Define a function named combine that takes in two arguments.
@@ -271,7 +283,7 @@ combine(object1 , object2);
 //
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
-
+//
 var myObj = { a: 1, b: 2 };
 
 function invert (obj) {
