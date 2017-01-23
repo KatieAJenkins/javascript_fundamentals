@@ -251,8 +251,8 @@ function distance (object1 , object2) {
   var xDistSquared = Math.pow(xdistance, 2);
   var yDistSquared = Math.pow(ydistance, 2);
   var totalDistance = Math.sqrt(xDistSquared + yDistSquared);
-  console.log(totalDistance);
-  // return totalDistance;
+  // console.log(totalDistance);
+  return totalDistance;
 }
 
 distance(point1, point2);
@@ -274,6 +274,7 @@ var object2 = { b: 2 };
 function combine (object1, object2) {
 var newObject = Object.assign({}, object1, object2);
 // console.log(newObject);
+  return newObject;
 };
 
 combine(object1 , object2);
@@ -284,14 +285,22 @@ combine(object1 , object2);
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 //
-var myObj = { a: 1, b: 2 };
+var object = { a: 1, b: 2 };
 
-function invert (obj) {
-  console.log(myObj.reverse());
+function invert (object) {
+  var newObject = {};
+
+  for (var prop in object){
+    if (object.hasOwnProperty(prop)) {
+      newObject[object[prop]] = prop;
+        }
   }
 
+  // console.log(newObject);
+  return newObject;
+};
 
-invert(myObj);
+invert(object);
 
 // Define a function named values that takes in one argument.
 //    obj (object)
@@ -302,7 +311,8 @@ invert(myObj);
 var object = { a: 1, b: 2, c: 3 };
 
 function values (object) {
-  console.log(Object.values(object));
+  // console.log(Object.values(object));
+  return Object.values(object);
 };
 
 values(object);
@@ -314,13 +324,14 @@ values(object);
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 
-var obj = { a: 1, b: 2 };
+var object = { a: 1, b: 2 };
 
-function toPairs (obj){
-  console.log(Object.entries(obj));
+function toPairs (object){
+  // console.log(Object.entries(object));
+  return Object.entries(object)
 }
 
-toPairs(obj);
+toPairs(object);
 
 
 // Define a function called fromPairs that takes in one argument.
@@ -333,7 +344,14 @@ toPairs(obj);
 var myArray = [['a', 1], ['b', 2]];
 
 function fromPairs (array) {
-  console.log(Object.assign({}, obj));
+  // console.log(Object.assign({}, array));
+  // return Object.assign({} , array);
+  var object = {};
+  array.forEach(function(element) {
+    object[element[0]] = element [1];
+  });
+  // console.log(object);
+  return object;
 }
 
 fromPairs(myArray);
